@@ -4,7 +4,8 @@
   "description": "Spotify clone for learning",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass includes/assets/sass/register.scss includes/assets/css/register.css -w"
+    "compile:sass": "node-sass includes/assets/sass/register.scss includes/assets/css/register.css -w",
+    "compile:index": "node-sass includes/assets/sass/index.scss includes/assets/css/index.css -w"
   },
   "repository": {
     "type": "git",

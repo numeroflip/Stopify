@@ -29,6 +29,8 @@
 
 </head>
 <body>
+  
+
     <!-- -----------------------------------------LOGIN HTML PART ----------------------------------------------------- -->
     <div  id="loginForm" class="login" >
             
@@ -37,14 +39,16 @@
             <p class="login__or">Or</p>
 
                 <form action="register.php" class="login__form" method="POST" id="loginForm">
-                    <p>
+                    <p class="input-cont">
+                        
+                        <input class="input" type="text" name="loginUsername" id="loginUsername" placeholder="Username" value='<?php getInputValue("loginUsername") ?>' required>
                         <?php echo $account->getError(Constants::$loginFailed); ?>
-
-                        <input class="input" type="text" name="loginUsername" id="loginUsername" placeholder="Username" required>
+                        
                     </p>
+                   
+                    <p class="input-cont">
                     
-                    
-                    <input class="input" type="password" name="loginPassword" id="loginPassword" placeholder="Password" required>
+                    <input class="input input-1" type="password" name="loginPassword" id="loginPassword" placeholder="Password" required>
                     </p>
                     <div class="login__rem-cont">
                         <label for="rem-radio" class="login__rem-cont--rem-p">Remember me</label>
@@ -69,45 +73,47 @@
         <h1 class="login__hero">Stopify</h1>
         <form action="register.php" id="registerForm" method="POST" hidden>
             <h2>Create your free account</h2>
-            <p>
+            <p class="input-cont">
+                <label for="username">Username:</label>
+                <input class="input" type="text" name="username" id="username"  value='<?php getInputValue("username") ?>' required>
                 <?php echo $account->getError(Constants::$userNameChars); ?>
                 <?php echo $account->getError(Constants::$userNameTaken); ?>
-                <label for="username">Username:</label><br>
-                <input class="input" type="text" name="username" id="username"  value='<?php getInputValue("username") ?>' required>
             </p>
-            <p>
-                <?php echo $account->getError(Constants::$firstNameChars); ?>
-
-                <label for="firstname">First name:</label><br>
+            <p class="input-cont">
+                
+                <label for="firstname">First name:</label>
                 <input class="input" type="text" name="firstname" id="firstname" value='<?php getInputValue("firstname") ?>'  required>
+                <?php echo $account->getError(Constants::$firstNameChars); ?>
             </p>
-            <p>
-                <?php echo $account->getError(Constants::$lastNameChars); ?>
-
-                <label for="lastname">Last name:</label><br>
+            <p class="input-cont">
+                
+                <label for="lastname">Last name:</label>
                 <input class="input" type="text" name="lastname" id="lastname"  value='<?php getInputValue("lastname") ?>'  >
+                <?php echo $account->getError(Constants::$lastNameChars); ?>
             </p>
-            <p>
+            <p class="input-cont">
+               
+
+                <label for="email">Email:</label>
+                <input class="input" type="email" name="email" id="email"  value='<?php getInputValue("email") ?>'  required>
                 <?php echo $account->getError(Constants::$emailInvalid); ?>
                 <?php echo $account->getError(Constants::$emailsDoNoMatch); ?>
                 <?php echo $account->getError(Constants::$emailTaken); ?>
-
-                <label for="email">Email:</label><br>
-                <input class="input" type="email" name="email" id="email"  value='<?php getInputValue("email") ?>'  required>
             </p>
-            <p>        
-                <label for="email2">Confirm email:</label><br>
+            <p class="input-cont">        
+                <label for="email2">Confirm email:</label>
                 <input class="input" type="email2" name="email2" id="email2"  value='<?php getInputValue("email2") ?>'  required>
             </p>
-            <p>
+            <p class="input-cont">
+                
+
+                <label class="login__label" for="password">Password:</label>
+                <input class="input" type="password" name="password" id="password"   required>
                 <?php echo $account->getError(Constants::$passwordsDoNoMatch); ?>
                 <?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?>
-
-                <label class="login__label" for="password">Password:</label><br>
-                <input class="input" type="password" name="password" id="password"   required>
             </p>
-            <p>
-                <label for="password2">Confirm password:</label><br>
+            <p class="input-cont">
+                <label for="password2">Confirm password:</label>
                 <input class="input" type="password" name="password2" id="password2"   required>
             </p>
             <button type="submit" class="btn login__btn" name="registerButton">Sign up</button>
@@ -119,9 +125,20 @@
             </ul>
         
     </div>
-    
- 
-
+    <script>document.getElementById("registrationForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "none";</script>
+ <!-- ----------------------Checks if you pushed the register button, and send you back to register, not login in that case -->
+    <?php 
+    if(isset($_POST['registerButton'])) {
+        echo '<script>document.getElementById("registrationForm").style.display = "flex";
+        document.getElementById("loginForm").style.display = "none";</script>';
+      
+    } else {
+        echo '<script>document.getElementById("registrationForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "flex";</script>';
+      
+    }
+    ?>
     <script src="includes/assets/js/register.js"></script>
 </body>
 
