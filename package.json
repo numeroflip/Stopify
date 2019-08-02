@@ -1,0 +1,22 @@
+{
+  "name": "stopify",
+  "version": "1.0.0",
+  "description": "Spotify clone for learning",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass includes/assets/sass/register.scss includes/assets/css/register.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numeroflip/Stopify.git"
+  },
+  "author": "Aron Berenyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/numeroflip/Stopify/issues"
+  },
+  "homepage": "https://github.com/numeroflip/Stopify#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
