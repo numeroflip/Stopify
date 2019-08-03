@@ -1,9 +1,9 @@
 $color-grey-light-1: rgb(233, 233, 233);
-$color-grey-light-2: rgb(214, 214, 214);
+$color-grey-light-2: #b3b3b3;
 $color-grey-light-3: rgb(134, 134, 134);
 
 $color-grey-dark-1: rgb(63, 63, 63);
-$color-grey-dark-2: rgb(39, 39, 39);
+$color-grey-dark-2: #282828;
 $color-primary: #1bbe54;
 
 $shadow-inset: inset 0 0 0.5rem rgba(0, 0, 0, 0.726);
@@ -28,5 +28,5 @@ body {
   color: $color-grey-light-1;
   font-family: "Montserrat", sans-serif;
   min-height: 100vh;
-  font-family: Montserrat;
+
 }
