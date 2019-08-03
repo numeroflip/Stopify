@@ -1,96 +1,91 @@
-
-
-
+@import "base.scss";
 // -----------------------------------------------------------------------------------------------
 // -------------BASIC BUTTON-----------------------
 .btn {
-    &,
-    &:link,
-    &:visited {
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: 500;
-      border-radius: 10rem;
-      padding: 0.8rem 3rem;
-      border: none;
-      color: white;
-      cursor: pointer;
-      box-shadow: $shadow-inset;
-    }
-  
-    &:active,
-    &:focus {
-      outline: none;
-    }
-
-    &:invalid {
-        box-shadow: inset 0 0 0.5rem red;
-    }
-  }
-// --------------------------------------------------------------------------------------------------------------
-  // -----------------------  CHECKBOX -> COOL TOGGLE----------------------
-  input {
-    &[type="checkbox"] {
-      position: relative;
-      width: 4rem;
-      height: 2rem;
-      -webkit-appearance: none;
-      background: $color-grey-dark-1;
-      outline: none;
-      border-radius: 10rem;
-      box-shadow: $shadow-inset;
-      transition: all 0.2s;
-
-
-      &::after {
-        content: "";
-        height: 2rem;
-        width: 2rem;
-        background-color: $color-grey-light-2;
-        z-index: 10;
-        position: absolute;
-        border-radius: 50%;
-        top: 0;
-        left: 0;
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.726);
-  
-        transition: all 0.3s;
-      }
-    }
-  
-    &:checked[type="checkbox"] {
-      background-color: lighten($color-primary, 10%);
-  
-      &::after {
-        left: 2rem;
-        transition: 0.3s;
-      }
-    }
-  }
-  // ----------------------------------------------------------------------------------------------------------
-// -----------------------INPUT FIELDS-------------------------
-  .input {
-    box-shadow: $shadow-inset;
-  
-    
-    align-self: stretch;
-    width: 100%;
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 10rem;
+    padding: 0.8rem 3rem;
     border: none;
-    background-color: $color-grey-dark-2;
-    border-radius: 4px;
-    padding: 0.8rem 1rem;
-    
     color: white;
-  
-    &::placeholder {
-      color: $color-grey-light-3;
+    cursor: pointer;
+    box-shadow: $shadow-inset;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:invalid {
+    box-shadow: inset 0 0 0.5rem red;
+  }
+}
+// --------------------------------------------------------------------------------------------------------------
+// -----------------------  CHECKBOX -> COOL TOGGLE----------------------
+input {
+  &[type="checkbox"] {
+    position: relative;
+    width: 4rem;
+    height: 2rem;
+    -webkit-appearance: none;
+    background: $color-grey-dark-1;
+    outline: none;
+    border-radius: 10rem;
+    box-shadow: $shadow-inset;
+    transition: all 0.2s;
+
+    &::after {
+      content: "";
+      height: 2rem;
+      width: 2rem;
+      background-color: $color-grey-light-2;
+      z-index: 10;
+      position: absolute;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      box-shadow: 0 0 0.7rem rgba(0, 0, 0, 1);
+      transition: all 0.3s;
     }
-  
-    &:focus {  
-      padding-bottom: 0.6rem;
-      border-bottom: 0.2rem solid $color-primary;
-      outline: none;
-      background-color: $color-grey-dark-1;
+  }
+
+  &:checked[type="checkbox"] {
+    background-color: lighten($color-primary, 10%);
+
+    &::after {
+      left: 2rem;
+      transition: 0.3s;
     }
+  }
+}
+// ----------------------------------------------------------------------------------------------------------
+// -----------------------INPUT FIELDS-------------------------
+.input {
+  box-shadow: $shadow-inset;
+
+  align-self: stretch;
+  width: 100%;
+  border: none;
+  background-color: $color-grey-dark-2;
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+
+  color: white;
+
+  &::placeholder {
+    color: $color-grey-light-3;
+  }
+
+  &:focus {
+    padding-bottom: 0.6rem;
+    border-bottom: 0.2rem solid $color-primary;
+    outline: none;
+    background-color: $color-grey-dark-1;
+  }
 }
