@@ -1,0 +1,73 @@
+.sidebar-cont {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 23rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2.4rem;
+  background-color: $color-grey-dark-3;
+  align-items: stretch;
+  .sidebar {
+    color: $color-grey-light-2;
+    &__logo {
+      display: block;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 3rem;
+      align-self: center;
+      color: $color-light;
+    }
+
+    &__items {
+      margin-top: 2.4rem;
+    }
+
+    &__item {
+      padding: 1rem 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+      }
+
+      &--active {
+        position: relative;
+        color: white;
+        &::before {
+          margin-right: 2rem;
+          margin-left: -0.8rem;
+          position: absolute;
+          top: 5px;
+          bottom: 5px;
+          display: block;
+          content: "";
+          width: 4px;
+          background-color: $color-primary;
+        }
+      }
+    }
+
+    &__link {
+      display: flex;
+      padding: 0 2rem;
+      justify-content: flex-start;
+      align-items: center;
+      align-self: stretch;
+    }
+
+    &__icon {
+      height: 2.4rem;
+      width: 2.4rem;
+      fill: currentColor;
+    }
+
+    &__icon-text {
+      margin-left: 1.6rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+  }
+}
